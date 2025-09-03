@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+# Binaries
+/bin/
+/*.o
+/*.exe
+/*.out
+
+# Build system artifacts
+compile_commands.json
+.cache/
+
+# OS junk
+.DS_Store
