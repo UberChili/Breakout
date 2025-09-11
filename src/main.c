@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <stdio.h>
 
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
@@ -11,13 +12,14 @@ typedef struct {
     Color color;
 } Player;
 
-void updatePlayer(Player *player, float delta) {
-    float max_x = SCREEN_WIDTH - PLAYER_WIDTH;
+/* void updatePlayer(Player *player, float delta) { */
+void updatePlayer(float delta) {
+    /* float max_x = SCREEN_WIDTH - PLAYER_WIDTH; */
+    printf("%f\n", delta);
 }
 
 int main(void) {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Breakout1");
-    float deltaTime = GetFrameTime();
 
     // Initializing player
     Player player = {0};
@@ -26,9 +28,11 @@ int main(void) {
     player.color = BROWN;
 
     while (!WindowShouldClose()) {
+        float deltaTime = GetFrameTime();
         // Update
         // -------------------------
-        updatePlayer(&player);
+        /* updatePlayer(&player, deltaTime); */
+        updatePlayer(deltaTime);
 
         BeginDrawing();
         ClearBackground(SKYBLUE);
